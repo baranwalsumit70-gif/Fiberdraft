@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FiberDraft · FTTH auto-design</title>
+<meta name="description" content="Draw or import a service area, load streets and buildings, and auto-design an FTTH network from PFP to terminal with optical budget, BOM and KML export.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FiberDraft · FTTH auto-design">
+<meta property="og:description" content="Search a place, draw the service area, load homes from OpenStreetMap and generate the PFP, F2 cables, splice closures, terminals and drops, with optical budget, BOM and a PDF report.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0a'/%3E%3Cg transform='translate(4 4)' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='16' y='16' width='6' height='6' rx='1'/%3E%3Crect x='2' y='16' width='6' height='6' rx='1'/%3E%3Crect x='9' y='2' width='6' height='6' rx='1'/%3E%3Cpath d='M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3'/%3E%3Cpath d='M12 12V8'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+<style>
+/*STYLES*/
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" aria-label="Planner">
+    <div class="sb-head">
+      <div class="brand">
+        <div class="brand-mark"><i data-i="network"></i></div>
+        <div style="min-width:0"><div class="brand-name">FiberDraft</div><div class="brand-sub">FTTH auto-design</div></div>
+      </div>
+      <button class="icon-btn" data-act="import" aria-label="Open KML, KMZ or project file" title="Open KML, KMZ or project"><i data-i="folder-open"></i></button>
+      <button class="icon-btn" data-act="new" aria-label="New plan" title="New plan"><i data-i="plus"></i></button>
+      <button class="icon-btn" data-act="help" aria-label="How it works" title="How it works"><i data-i="circle-help"></i></button>
+    </div>
+    <div class="sb-tabs">
+      <div class="tabs" role="tablist" aria-label="Sections">
+        <button class="tab" role="tab" data-act="tab" data-tab="plan" aria-selected="true" aria-controls="panel-plan">Plan</button>
+        <button class="tab" role="tab" data-act="tab" data-tab="rules" aria-selected="false" aria-controls="panel-rules">Rules</button>
+        <button class="tab" role="tab" data-act="tab" data-tab="results" aria-selected="false" aria-controls="panel-results">Results <span class="dot" hidden></span></button>
+      </div>
+    </div>
+    <div class="sb-body" id="panel-plan" role="tabpanel" aria-label="Plan"></div>
+    <div class="sb-body" id="panel-rules" role="tabpanel" aria-label="Rules" hidden></div>
+    <div class="sb-body" id="panel-results" role="tabpanel" aria-label="Results" hidden></div>
+    <div class="sb-foot" id="foot"></div>
+  </aside>
+  <main class="mapwrap">
+    <div id="map" role="application" aria-label="Map"></div>
+    <div class="map-ui mu-top">
+      <div class="search" role="search">
+        <i data-i="search"></i>
+        <input class="input" id="q" type="search" placeholder="Search a place or paste lat, lng" autocomplete="off" aria-label="Search a place">
+        <div class="search-res panel" id="qres" hidden></div>
+      </div>
+      <div class="spacer"></div>
+      <div class="base-seg"><div class="seg" id="baseSeg" role="group" aria-label="Base map"></div></div>
+    </div>
+    <div class="map-ui mu-hint" id="hint" hidden></div>
+    <div class="map-ui mu-legend"><div class="panel legend" id="legend"></div></div>
+    <div class="map-ui mu-coords" id="coords" aria-hidden="true"></div>
+    <div class="map-ui mu-busy" id="busy" hidden><div class="panel busy-card"><i data-i="loader-circle" data-c="spin"></i><span id="busyText">Working…</span></div></div>
+    <div class="dropzone" id="dropzone" hidden>Drop a KML, KMZ or FiberDraft project to open it</div>
+  </main>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<dialog class="modal" id="modal"></dialog>
+<input type="file" id="fileKml" accept=".kml,.kmz,.json" hidden>
+<script>
+/*ICONS*/
+</script>
+<script>
+/*ENGINE*/
+</script>
+<script>
+/*KML*/
+</script>
+<script>
+/*DEMO*/
+</script>
+<script>
+/*APP*/
+</script>
+</body>
+</html>
